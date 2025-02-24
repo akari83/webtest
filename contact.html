@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>レッスン詳細 - 日本語レッスン</title>
+    <title>お問い合わせ - 日本語レッスン</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -47,37 +47,32 @@
             max-width: 900px;
             margin: 20px auto;
         }
-        .instructor {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        .faq {
             text-align: left;
         }
-        .instructor img {
-            width: 200px;
-            border-radius: 10px;
+        .faq h3 {
+            color: #567D46;
         }
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            text-align: left;
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
         }
-        .testimonial {
-            background: #ffffff;
-            padding: 15px;
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
+        .contact-form button {
             background-color: #567D46;
             color: white;
-            text-decoration: none;
+            padding: 10px 20px;
+            border: none;
             border-radius: 5px;
             font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
         }
         footer {
             background-color: #7DAA92;
@@ -103,51 +98,33 @@
     </header>
 
     <main class="content">
-        <section class="section-frame">
-            <h2>レッスン概要</h2>
-            <p>当レッスンでは、初心者から上級者まで幅広いレベルの方が楽しく学べるように、柔軟で実践的な授業を提供しています。日常会話、発音矯正、ビジネス日本語、子供向けレッスンなど、それぞれのニーズに合わせてカスタマイズ可能です。</p>
-            <h3>目的</h3>
-            <p>日本語を自然に話せるようになり、実生活や仕事で活かせるスキルを身につけることを目指します。</p>
-            <h3>対象者</h3>
-            <p>✔ 初めて日本語を学ぶ方<br>✔ 会話力を向上させたい方<br>✔ ビジネスで日本語を使いたい方<br>✔ 子供の日本語学習をサポートしたい保護者の方</p>
-            <h3>料金</h3>
-            <p>50分 23米ドル（週何回でも受講可能）</p>
+        <section class="section-frame faq">
+            <h2>よくある質問</h2>
+            <h3>レッスンはどのように行われますか？</h3>
+            <p>レッスンはZoomを使用して行われます。マンツーマンで指導し、教材は事前に提供します。</p>
+            <h3>どのレベルの人が受講できますか？</h3>
+            <p>初心者から上級者まで対応可能です。個々のレベルに合わせた授業を提供します。</p>
+            <h3>レッスンの料金は？</h3>
+            <p>1レッスン（60分）：3000円</p>
+            <h3>レッスンの予約やキャンセルはどうすればいいですか？</h3>
+            <p>レッスン予約は専用フォームから行い、キャンセルは24時間前までにご連絡ください。</p>
         </section>
 
         <section class="section-frame">
-            <h2>講師について</h2>
-            <div class="instructor">
-                <img src="instructor.jpg" alt="講師の写真">
-                <div>
-                    <p>私はCertified Japanese Teacher（資格取得済）であり、1600時間以上のオンライン指導経験があります。また、フィリピンで1年間ボランティア講師として活動しました。<br><br>
-                    フレンドリーでリラックスした雰囲気の中で、生徒一人ひとりに合った学習プランを提供し、楽しく効果的に日本語を学べるようにサポートします。<br><br>
-                    特にシャイな方や子供の指導が得意です！</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-frame">
-            <h2>生徒の声</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>「先生のレッスンはとても分かりやすく、楽しいです！」 - Aさん</p>
-                </div>
-                <div class="testimonial">
-                    <p>「発音の指導がとても丁寧で、日本語らしい話し方ができるようになりました！」 - Bさん</p>
-                </div>
-                <div class="testimonial">
-                    <p>「ビジネスシーンで使えるフレーズを学び、自信を持って仕事で日本語を使えるようになりました。」 - Cさん</p>
-                </div>
-                <div class="testimonial">
-                    <p>「先生のレッスンのおかげで、子供が日本語を楽しく学べるようになりました！」 - Dさん</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-frame">
-            <h2>お申し込み</h2>
-            <p>興味がある方は、お気軽にお問い合わせください！</p>
-            <a href="contact.html" class="btn">お問い合わせ</a>
+            <h2>お問い合わせ</h2>
+            <p>レッスンについてのご質問やお申し込みはこちらからどうぞ。</p>
+            <form class="contact-form" action="submit_form.php" method="POST">
+                <label for="name">お名前</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">お問い合わせ内容</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">送信</button>
+            </form>
         </section>
     </main>
 
