@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>レッスン詳細 - 日本語レッスン</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #F3F4E8;
+            color: #4A4A4A;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #7DAA92;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+        .section-frame {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 20px auto;
+        }
+        .instructor {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            text-align: left;
+        }
+        .instructor img {
+            width: 200px;
+            border-radius: 10px;
+        }
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            text-align: left;
+        }
+        .testimonial {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #567D46;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #7DAA92;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">日本語レッスン</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">ホーム</a></li>
+                    <li><a href="lesson.html">レッスン詳細</a></li>
+                    <li><a href="contact.html">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="section-frame">
+            <h2>レッスン概要</h2>
+            <p>当レッスンでは、初心者から上級者まで幅広いレベルの方が楽しく学べるように、柔軟で実践的な授業を提供しています。日常会話、発音矯正、ビジネス日本語、子供向けレッスンなど、それぞれのニーズに合わせてカスタマイズ可能です。</p>
+            <h3>目的</h3>
+            <p>日本語を自然に話せるようになり、実生活や仕事で活かせるスキルを身につけることを目指します。</p>
+            <h3>対象者</h3>
+            <p>✔ 初めて日本語を学ぶ方<br>✔ 会話力を向上させたい方<br>✔ ビジネスで日本語を使いたい方<br>✔ 子供の日本語学習をサポートしたい保護者の方</p>
+            <h3>料金</h3>
+            <p>50分 23米ドル（週何回でも受講可能）</p>
+        </section>
+
+        <section class="section-frame">
+            <h2>講師について</h2>
+            <div class="instructor">
+                <img src="images/instructor.jpg" alt="講師の写真">
+                <div>
+                    <p>私はCertified Japanese Teacher（資格取得済）であり、1600時間以上のオンライン指導経験があります。また、フィリピンで1年間ボランティア講師として活動しました。<br><br>
+                    フレンドリーでリラックスした雰囲気の中で、生徒一人ひとりに合った学習プランを提供し、楽しく効果的に日本語を学べるようにサポートします。<br><br>
+                    特にシャイな方や子供の指導が得意です！</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-frame">
+            <h2>生徒の声</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>「先生のレッスンはとても分かりやすく、楽しいです！」 - Aさん</p>
+                </div>
+                <div class="testimonial">
+                    <p>「発音の指導がとても丁寧で、日本語らしい話し方ができるようになりました！」 - Bさん</p>
+                </div>
+                <div class="testimonial">
+                    <p>「ビジネスシーンで使えるフレーズを学び、自信を持って仕事で日本語を使えるようになりました。」 - Cさん</p>
+                </div>
+                <div class="testimonial">
+                    <p>「先生のレッスンのおかげで、子供が日本語を楽しく学べるようになりました！」 - Dさん</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-frame">
+            <h2>お申し込み</h2>
+            <p>興味がある方は、お気軽にお問い合わせください！</p>
+            <a href="contact.html" class="btn">お問い合わせ</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 日本語レッスン. All rights reserved.</p>
+    </footer>
+</body>
+</html>
