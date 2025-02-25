@@ -73,7 +73,8 @@
         </form>
     </section>
     
-    <script>
+    <script>　
+        <!--
         document.getElementById("contact-form").addEventListener("submit", function(e) {
             e.preventDefault();
             var formData = {
@@ -81,13 +82,41 @@
                 email: this.email.value,
                 message: this.message.value
             };
-            fetch("https://script.google.com/macros/s/AKfycbzLeaMOVcYV1kKQrKayvl3e7T3p1znAamApMEOPZ86UGpR8MNy-LWC-aIvG8-TrnRQujw/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbwtvJya7torKV4f8AC2nUDc9Dz63w-ZiUobiksp1jxqPXlGffjATfpy_RTx8WYYc4q69w/exec-LWC-aIvG8-TrnRQujw/exec", {
                 method: "POST",
                 body: JSON.stringify(formData),
                 headers: { "Content-Type": "application/json" }
             }).then(response => alert("送信完了！"))
             .catch(error => alert("fetchでエラーが発生しました"));
-        });
+        }); 
+    -->
+
+    console.log("送信開始"); // 送信前ログ
+
+fetch("https://script.google.com/macros/s/AKfycbwtvJya7torKV4f8AC2nUDc9Dz63w-ZiUobiksp1jxqPXlGffjATfpy_RTx8WYYc4q69w/exec", { 
+    method: "POST",
+    body: JSON.stringify({
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    }),
+    headers: { "Content-Type": "application/json" }
+})
+.then(response => {
+    console.log("レスポンス取得:", response); // レスポンス情報をログに出力
+    return response.text();
+})
+.then(data => {
+    console.log("サーバーからの応答:", data); // サーバーの返答をログに出力
+    alert("送信完了！");
+})
+.catch(error => {
+    console.error("Fetch エラー:", error); // エラー内容をログに出力
+    alert("エラーが発生しました: " + error);
+});
+
+
+
     </script>
 </body>
 </html>
