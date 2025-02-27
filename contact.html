@@ -71,52 +71,32 @@
             
             <button type="submit">送信</button>
         </form>
+        <p id="response-message" style="text-align:center; color:green;"></p>
     </section>
-    
-    <script>　
-        /*
+
+    <script>
         document.getElementById("contact-form").addEventListener("submit", function(e) {
             e.preventDefault();
-            var formData = {
-                name: this.name.value,
-                email: this.email.value,
-                message: this.message.value
-            };
-            fetch("https://script.google.com/macros/s/AKfycbwtvJya7torKV4f8AC2nUDc9Dz63w-ZiUobiksp1jxqPXlGffjATfpy_RTx8WYYc4q69w/exec-LWC-aIvG8-TrnRQujw/exec", {
+            
+            var formData = new FormData(this);
+            var jsonData = {};
+            formData.forEach((value, key) => jsonData[key] = value);
+
+            fetch("https://script.google.com/macros/s/AKfycbzejS8Pey-Uz49pFgGVfStmZC5iPXQ5efnLU7WidYJ56cIXEUvhBDeLGZqDnAfEAPLM/exec", { // ここにGASのURLを挿入
                 method: "POST",
-                body: JSON.stringify(formData),
+                body: JSON.stringify(jsonData),
                 headers: { "Content-Type": "application/json" }
-            }).then(response => alert("送信完了！"))
-            .catch(error => alert("fetchでエラーが発生しました"));
-        }); 
-    */
-
-    console.log("送信開始"); // 送信前ログ
-
-fetch("https://script.google.com/macros/s/AKfycbwtvJya7torKV4f8AC2nUDc9Dz63w-ZiUobiksp1jxqPXlGffjATfpy_RTx8WYYc4q69w/exec", { 
-    method: "POST",
-    body: JSON.stringify({
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        message: document.getElementById("message").value
-    }),
-    headers: { "Content-Type": "application/json" }
-})
-.then(response => {
-    console.log("レスポンス取得:", response); // レスポンス情報をログに出力
-    return response.text();
-})
-.then(data => {
-    console.log("サーバーからの応答:", data); // サーバーの返答をログに出力
-    alert("送信完了！");
-})
-.catch(error => {
-    console.error("Fetch エラー:", error); // エラー内容をログに出力
-    alert("エラーが発生しました: " + error);
-});
-
-
-
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("response-message").textContent = "送信完了しました！";
+                document.getElementById("contact-form").reset();
+            })
+            .catch(error => {
+                document.getElementById("response-message").textContent = "エラーが発生しました。";
+                console.error("Error:", error);
+            });
+        });
     </script>
 </body>
 </html>
