@@ -82,11 +82,11 @@
             var jsonData = {};
             formData.forEach((value, key) => jsonData[key] = value);
 
-           /*
+           
             fetch("https://script.google.com/macros/s/AKfycbzuPqNl68Hi8iryfyTscyu_rko0YLBU8T4IK_xXYguJLvoqr5ZzKLD4XDVeG5VMdEVQ/exec", { // ここにGASのURLを挿入
                 method: "POST",
                 body: JSON.stringify(jsonData),
-                headers: { "Content-Type": "application/json" }
+                headers: { "Content-Type": "text/plain" } //application/json
             })
             .then(response => response.text())
             .then(data => {
@@ -97,23 +97,9 @@
                 document.getElementById("response-message").textContent = "エラーが発生しました。";
                 console.error("Error:", error);
             });
-            */
+            
 
-            fetch("https://script.google.com/macros/s/AKfycbzuPqNl68Hi8iryfyTscyu_rko0YLBU8T4IK_xXYguJLvoqr5ZzKLD4XDVeG5VMdEVQ/exec", {
-                method: "POST",
-                body: JSON.stringify(jsonData),
-                headers: { "Content-Type": "application/json" }
-            })
-            .then(response => response.json()) // JSON形式でレスポンスを取得
-            .then(data => {
-                console.log("サーバーレスポンス:", data);
-                document.getElementById("response-message").textContent = "送信完了しました！";
-                document.getElementById("contact-form").reset();
-            })
-            .catch(error => {
-                console.error("エラー:", error);
-                document.getElementById("response-message").textContent = "送信に失敗しました。";
-            });
+            
             
         });
     </script>
